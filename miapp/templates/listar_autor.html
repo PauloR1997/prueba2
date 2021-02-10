@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{titulo}}
+{% endblock title %}
+
+{% block content %}
+    <h1 class="title"> {{titulo}} </h1>
+    <ul>
+        {% for autor in autores %} 
+            <li>
+                <h4>
+                    {{autor.id}}- Nombre: {{autor.nombre}}
+                </h4>
+                <h4>
+                    Apellidos: {{autor.apellido}}
+                </h4>
+                <h4>
+                    Sexo: {{autor.sexo}}
+                </h4>
+                <h4>
+                    Pais: {{autor.pais}}
+                </h4>
+                <h4>
+                    Fecha de nacimiento: {{autor.fecha_nacimiento}}
+                </h4>
+                <p>
+                    <a href="{% url 'eliminar_autor' id=autor.id %}">
+                        Eliminar
+                    </a>
+                </p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

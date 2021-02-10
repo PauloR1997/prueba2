@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load filters %}
+
+{% block title %}
+    Autor 
+{% endblock %}
+{% block content %}
+    <H1 class="title"> 
+        Autor
+    </H1>
+    <form action="{% url 'save_autor' %}" method="POST">
+        {% csrf_token %}
+        <label for="nombre"> Nombre del autor </label>
+        <input type="text" name="nombre" />
+
+        <label for="apellido"> Apellido </label>
+        <input type = "text" name="apellido" />
+
+        <label for="sexo"> Sexo </label>
+        <select name="sexo">
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+        </select>
+        <label for="pais"> Pais </label>
+        <select name="pais">
+            <option value="Chile">Chile</option>
+            <option value="Brasil">Brasil</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Panama">Panama</option>
+            <option value="Peru">Peru</option>
+            <option value="Uruguay">Uruguay</option>
+        </select>
+        <label for="fecha_nacimiento"> Fecha de nacimiento</label>
+        <input type = "date" name="fecha_nacimiento" />
+
+        <input type="submit" value="Agregar" />
+
+    </form>
+{% endblock %}
