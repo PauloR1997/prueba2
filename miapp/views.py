@@ -65,7 +65,7 @@ def rango2(request,a = 0,b = 100):
 
     resultado = f"""
         <h2> Rango con parámetros </h2>
-        <h2> Número de [{a},{b}] </h2>
+        <h2> rango de numeros [{a},{b}] </h2>
         Resultado: <br>
         <ul>
     """
